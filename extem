@@ -1,0 +1,511 @@
+//Teperature ImageApp
+
+
+if(Int(textInput.text!)! < (-10) && (Int(textInput.text!))! > (-20)){
+    labelOutput.text! = "Snow day"
+    imageOL.image = UIImage(named: "Snow")
+}
+else if(Int(textInput.text!)! > (10) && (Int(textInput.text!))! < (20)){
+    labelOutput.text! = "Its cold"
+    imageOL.image = UIImage(named: "freezing")
+}
+else{
+    labelOutput.text! = "Sunny day"
+    imageOL.image = UIImage(named: "Sunny")
+
+OR
+
+let a = Double(temperatureInput.text!) ?? 0.0                if( a >= 40.0){            imageDisplay.image = UIImage(named: "hot")            discriptionDisplayOL.text = "It is too Hot OutSide"        }        else if( a >= 15.0 && a < 40.0){            imageDisplay.image = UIImage(named: "Normal")            discriptionDisplayOL.text = "The weather is Nice"        }        else if( a < 15.0 && a > -4.0){            imageDisplay.image = UIImage(named: "cold")            discriptionDisplayOL.text = "It is cold OutSide"        }        else if( a < -4.0 && a >= -10.0){            imageDisplay.image = UIImage(named: "snow")            discriptionDisplayOL.text = "❄️ Snowing ❄️"        }        else{            imageDisplay.image = UIImage(named: "freezing")            discriptionDisplayOL.text = "Do not go outside. It is freezing"  
+
+      }
+
+OR
+
+Func calcTemp(Celsius: Double)->
+(Double,Double){
+    var fahrenheit: Double
+var kelvin: Double
+    fahrenheit = (celcius * 9 / 5) + 32
+    kelvin = celsius + 273.15
+    return Fahrenheit,kelvin
+
+}
+
+//Discount App
+
+var amount = Double(AmountInput.text!) ?? 0.00;
+        var discount = Double(discountRate.text!) ?? 0.00;
+        var result = Double((amount) - (amount * discount/100.00))
+        displayOutletLabel.text = "Price after discount :\(result)"
+
+OR
+let input1 = Double(input1Outlet.text!)        let input2 = Double(input2Outlet.text!)                let amount = input1! - (input1! * input2!/100)                outputOtlet.text = "Price after discount :$\(amount)"
+        
+
+//Calculator App
+
+class ViewController: UIViewController {
+    
+    var operand1 = -1.1
+    var _operator = " "
+    var operand2 = -1.1
+
+    @IBOutlet weak var displayOutletLabel: UILabel!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func Btn5Clicked(_ sender: UIButton) {
+        displayOutletLabel.text = displayOutletLabel.text! + "5"
+        if (operand1 == -1.1){
+            operand1 = 5
+        }
+        else{
+            operand2 = 5
+        }
+    }
+
+    
+    @IBAction func BtnPlusClicked(_ sender: UIButton) {
+        displayOutletLabel.text = displayOutletLabel.text! + "+"
+        if(_operator == " "){
+            _operator = " +"
+        }
+    }
+    
+    
+    @IBAction func Btn3Clciked(_ sender: UIButton) {
+        displayOutletLabel.text = displayOutletLabel.text! + "3"
+        if(operand2 == -1.1){
+            operand2 = 3
+        }
+        else{
+            operand1 = 3
+        }
+    }
+    
+    @IBAction func BtnEqualsClicked(_ sender: UIButton) {
+        displayOutletLabel.text = displayOutletLabel.text! + "="
+        
+        displayOutletLabel.text = displayOutletLabel.text! + "\(operand1+operand2)"
+    }
+    
+}
+
+
+//Display Image App
+
+//Display the image
+        imageViewOL.image = UIImage(named:"MS. Dhoni")
+        //Dispaly the text and label
+        descriptionLabelOL.text = "Captain of 2011 Cricket World Cup!"
+    }
+//Vowels App
+
+// Read the text and assign it to the variable
+        var output1 = textInput.text!
+        
+        if
+            output1.contains("a")||output1.contains("e")||output1.contains("i")||output1.contains("o")||output1.contains("u")
+        {
+        displauOutletLabel.text = "The entered text has vowels😀"
+        }
+        else{
+            displauOutletLabel.text = "The entered text has no vowels😒"
+        }
+
+//Image Exam
+
+testLBL.text=""
+        if (sender.tag == 4){
+            IMAGE.image = UIImage(named: "4")
+            testLBL.text = "POLITOICIAn POLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIAN"
+            
+        }else if (sender.tag == 3){
+            
+            IMAGE.image = UIImage(named: "3")
+            //testLBL.text="alien"
+        }else if (sender.tag == 1){
+            IMAGE.image=UIImage(named: "1")
+            testLBL.text="Graet SCIENTIST POLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIANPOLITOICIAN"
+        }
+        
+            
+        }
+
+    
+    
+
+//Car App
+
+//Read the name from the text field and store it in a variable
+	        
+	        var name = cName.text!
+	        //Read the number from the text field and store it in a variable
+	        var number = cNumber.text!
+	        //Perform the String interpolation and display the output
+	        displaylabelOutlet.text = "🚘\(name)-\(number)🚘"
+
+	        
+
+
+//Assignment 1
+
+var firstName = fName.text!
+        
+        // read the last name and assign it to the variable
+        var lastName = lName.text!
+        
+        // read the birth year and assign it to the variable
+        
+        var birthYear = bYear.text!
+        
+        //to calculate the age based on given birth year and current year
+        
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy"
+        let yearString = dateFormatter.string(from: date)
+        
+        var y1 :Int = Int(birthYear) ?? 0
+
+        var y2 :Int = Int(yearString) ?? 0
+        var age :Int = y2-y1
+        // String interpolation to display
+        
+        var output1 = "Full Name : \(lastName) \(firstName)"
+        var output2 = "Initials : \(lastName.first!)  \(firstName.first!)"
+        var output3 = "Age : \(age)"
+        displayOutletLabel.text = "Details\r\r\(output1)\r\r\(output2)\r\r\(output3)"
+    }
+    
+    
+    @IBAction func resetClicked(_ sender: UIButton) {
+        displayOutletLabel.text = ""
+    }
+
+}
+
+
+//Calc Assignment
+
+//
+//  ViewController.swift
+//  Kshatriya_CalculatorApp
+//
+//  Created by Kshatriya,Srivyshnavi on 2/15/23.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+    
+    var num1:Double = -1.1
+     var num2:Double = 0
+     var res:Double = 0
+     var op = "+"
+     
+     var isFirstNumberEnd: Bool = false
+    
+    
+
+    @IBOutlet weak var resultOutlet: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        self.resultOutlet.text = ""
+        
+    }
+    
+    
+
+    @IBAction func clearAll(_ sender: UIButton) {
+        resultOutlet.text  = ""
+                num1 = 0
+                num2 = 0
+    }
+    
+    @IBAction func clearButton(_ sender: UIButton) {
+        resultOutlet.text=""
+       
+    }
+    
+    @IBAction func plusMinusButton(_ sender: UIButton) {
+        if(op=="+"){
+             op = "-"
+        } else{
+            op = "+"
+        }
+                resultOutlet.text="\(op)"
+    }
+    
+    @IBAction func divisionButton(_ sender: UIButton) {
+      op = "/"
+        num1 = Double(resultOutlet.text!)!
+        resultOutlet.text=""
+    }
+    
+    @IBAction func buttonSeven(_ sender: UIButton) {
+        resultOutlet.text = resultOutlet.text! + "7"
+    }
+    
+    
+    @IBAction func buttonEight(_ sender: UIButton) {
+        resultOutlet.text = resultOutlet.text! + "8"
+    }
+    
+    @IBAction func buttonNine(_ sender: UIButton) {
+        resultOutlet.text = resultOutlet.text! + "9"
+    }
+    
+    @IBAction func multiplyButton(_ sender: UIButton) {
+        op = "*"
+        num1 = Double(resultOutlet.text!)!
+        resultOutlet.text=""
+    }
+    
+    @IBAction func buttonFour(_ sender: UIButton) {
+        resultOutlet.text = resultOutlet.text! + "4"
+    }
+    
+    @IBAction func buttonFive(_ sender: UIButton) {
+        resultOutlet.text = resultOutlet.text! + "5"
+    }
+    
+    @IBAction func buttonSix(_ sender: UIButton) {
+        resultOutlet.text = resultOutlet.text! + "6"
+    }
+    
+    @IBAction func subtractionButton(_ sender: UIButton) {
+        op = "-"
+        num1 = Double(resultOutlet.text!)!
+        resultOutlet.text=""
+    }
+    
+    @IBAction func buttonOne(_ sender: UIButton) {
+        resultOutlet.text = resultOutlet.text! + "1"
+    }
+    
+    @IBAction func buttonTwo(_ sender: UIButton) {
+        resultOutlet.text = resultOutlet.text! + "2"
+    }
+    
+    @IBAction func buttonThree(_ sender: UIButton) {
+        resultOutlet.text = resultOutlet.text! + "3"
+    }
+    
+    @IBAction func additionButton(_ sender: UIButton) {
+        op = "+"
+        num1 = Double(resultOutlet.text!)!
+        resultOutlet.text=""
+    }
+    
+    @IBAction func buttonZero(_ sender: UIButton) {
+        resultOutlet.text = resultOutlet.text! + "0"
+    }
+    
+    @IBAction func decimalButton(_ sender: UIButton) {
+        if(!resultOutlet.text!.contains("."))
+               {
+                   resultOutlet.text = resultOutlet.text! + "."
+                   return
+               }
+    }
+    
+    @IBAction func percentageButton(_ sender: UIButton) {
+        op = "%"
+        num1 = Double(resultOutlet.text!)!
+        resultOutlet.text=""
+    }
+    
+    @IBAction func equalsButton(_ sender: UIButton) {
+       
+        num2 = Double(resultOutlet.text!)!
+                switch op {
+                case "+":
+                    res = num1+num2
+                    resultOutlet.text = String(res)
+                case "-":
+                    res = num1-num2
+                    resultOutlet.text = String(res)
+                case "*":
+                    res = num1*num2
+                    resultOutlet.text = String(res)
+                case "/":
+                    res = num1/num2
+                    if(num2==0){
+                        resultOutlet.text="Not a number"
+                    }
+                    else{
+                        let newresult=round( res*100000)/100000
+                        resultOutlet.text = String(newresult)
+                        
+                    }
+                case "%":
+                    res = num1.truncatingRemainder(dividingBy: num2)
+                    let result2=round(res*10)/10
+                    resultOutlet.text = String(result2)
+                default:
+                    resultOutlet.text = "Not a number"
+                }
+                let splitresponse = resultOutlet.text!.components(separatedBy: ".")
+                let testresponse = resultOutlet.text
+                if(!(testresponse == "Not a number")){
+                    if(splitresponse[1]=="0"){
+                        resultOutlet.text = splitresponse[0]
+                        
+                    }
+                    
+                }
+                
+            }
+            
+
+    }
+    
+
+NEW 
+
+
+       
+    @IBOutlet weak var displayLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        displayLabel.text = ""
+    }
+
+    @IBAction func calculationOfBMI(_ sender: Any)
+    {
+        //reading the height in feet and storing it in a variable heightFT
+        let heighFT = Double(heightinFeetOutlet.text!) ?? 0.0
+        
+        //reading the height in inches and storing it in a variable heightInches
+        
+        let heightInches = Double(heightinInchesOutlet.text!) ?? 0.0
+        
+        //converting the height in feet to inches to calculate the total height in inches
+        
+        let height = (heighFT*12) + heightInches
+        
+        //reading the weight in lbs and storing it in a variable weight
+        
+        let weight = Double(weightOutlet.text!) ?? 0.0
+        
+        // calculating the BodyMassIndex based on the givn formula
+        
+        let bm = (703*weight) / (height*height)
+        
+        //rounding up the BMI to one decimal value
+        
+        let BMI = round(bm * 10)/10.0
+        
+        //Displaying the image and the output based on the BMI
+        
+        if(BMI <= 18.5){
+            imageOulet.image = UIImage(named: "underWeight")
+            displayLabel.text = "Your Body Mass Index is \(BMI).\nThis is considered UnderWeight."
+        }
+        else if(BMI >= 18.6 && BMI
+                  <= 24.9){
+            imageOulet.image = UIImage(named: "normal")
+            displayLabel.text = "Your Body Mass Index is \(BMI).\nThis is considered Normal👍."
+        }
+        else if( BMI >= 25 && BMI <= 29.9 ){
+            imageOulet.image = UIImage(named: "overWeight")
+            displayLabel.text = "Your Body Mass Index is \(BMI).\nThis is considered OverWeight."
+        }
+        else if(BMI >= 30.0){
+            imageOulet.image = UIImage(named: "obese")
+            displayLabel.text = "Your Body Mass Index is \(BMI).\nThis is considered Obesity."
+        }
+        
+
+
+
+--------------
+
+class ViewController: UIViewController {
+
+    var heartTax = 11.75
+    var brainTax = 13.5
+    var kneeTax = 6.25
+    
+    
+    @IBOutlet weak var nameOL: UITextField!
+    
+    @IBOutlet weak var surgeryOL: UITextField!
+    
+    @IBOutlet weak var costOL: UITextField!
+    
+    @IBOutlet weak var displayLabel: UILabel!
+    
+    @IBOutlet weak var imageViewOL: UIImageView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+
+    @IBAction func buttonCalc(_ sender: Any) {
+        //Read the input
+        let name = nameOL.text!
+        let surgeryType = surgeryOL.text!
+        let cost = Double(costOL.text!)
+        //display the output in display label & Images in imgae view
+        if (surgeryType == "Heart" && cost == 3000.5){
+            let totalCost =  Double((cost!)*(1 + 11.75/100)) - Double(500)
+            let tCost = round(totalCost*100) / 100.0
+            displayLabel.text = "\(name): \rTotal cost for Heart🫀 srgery is $\(tCost) "
+            imageViewOL.image = UIImage(named: "Heart1")
+        }
+        else if (surgeryType == "Brain"){
+            let totalCost =  Double((cost!)*(1 + 13.5/100)) - Double(750)
+            let tCost = round(totalCost*100) / 100.0
+            displayLabel.text = "\(name): \rTotal cost for Brain🧠 srgery is $\(tCost) "
+            imageViewOL.image = UIImage(named: "Brain1")
+        }
+        else if (surgeryType == "Knee replacement" && cost == 1500.75){
+            let totalCost =  round(Double((cost!)*(1 + 6.25/100)) - Double(350))
+            let tCost = round(totalCost*100) / 100.0
+            displayLabel.text = "\(name): \rTotal cost for Knee replcement🦿 surgery is $\(tCost) "
+            imageViewOL.image = UIImage(named: "Knee1")
+        }
+        else{
+            displayLabel.text = "Enter all deatails"
+            imageViewOL.image = UIImage(named: "noResults1")
+        }
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
