@@ -1,0 +1,82 @@
+import UIKit
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var imageDisplay: UIImageView!
+    
+    @IBOutlet weak var crsNumber: UILabel!
+    
+    @IBOutlet weak var crsName: UILabel!
+    
+    @IBOutlet weak var semOffered: UILabel!
+    
+    @IBOutlet weak var prevBtnOL: UIButton!
+    
+    @IBOutlet weak var nxtBtnOL: UIButton!
+    
+    //create and array of courses
+    var courses = [["img01","44542","Network Security","Fall 2023"], ["img02","44643","ios","Fall 2023"],
+        ["img03","44555","Data Streaming","Summer 2024"]]
+    
+    var imageNumber = 0
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
+        //previous Button is disabled
+        prevBtnOL.isEnabled = false
+        
+        //Display the first course details
+        updateDisplay(imageNumber)
+        
+        imageDisplay.image = UIImage(named: courses[0][0])
+    }
+
+    @IBAction func prevBtnClicked(_ sender: UIButton) {
+        
+        //next button should be enabled
+        nxtBtnOL.isEnabled = true
+        
+        //decrement the image number
+        imageNumber -= 1
+        
+        //previous course in an array will be displayed
+       
+        updateDisplay(imageNumber)
+        
+        //when reached the start of the array previous button should be disabled
+        if(imageNumber == courses.startIndex)
+        {
+            prevBtnOL.isEnabled = false
+        }
+            
+        
+    }
+    
+    @IBAction func nextBtnClicked(_ sender: UIButton) {
+        
+        //Previous button should be enabled
+        prevBtnOL.isEnabled = true
+        
+        //next course in an array will be displayed
+        imageNumber += 1
+        updateDisplay(imageNumber)
+        
+        //when you reach the end of arry next button should be disabled
+        if(imageNumber == courses.count-1)
+        {
+            nxtBtnOL.isEnabled = false
+        }
+        
+    }
+    func updateDisplay(_ imageNumber:Int)
+    {
+        
+        crsNumber.text = courses[imageNumber][1]
+        crsName.text = courses[imageNumber][2]
+        semOffered.text = courses[imageNumber][3]
+        imageDisplay.image = UIImage(named: courses[imageNumber][0])
+    }
+}
+
